@@ -47,7 +47,7 @@ def parse_det_offset(Y, input_dim, score=0.1,down=4):
     return boxs
 
 def soft_bbox_vote(det,thre=0.35,score=0.05):
-    if det.shape[0] <= 1:
+    if det == [] or det.shape[0] <= 1:
         return det
     order = det[:, 4].ravel().argsort()[::-1]
     det = det[order, :]
