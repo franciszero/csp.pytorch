@@ -1,3 +1,14 @@
+# Usage - anonymizing faces
+
+1. Setup venv requirements.txt
+2. Follow the file path model_CSP/widerface/net_e382_l0.hdf5 at [here](https://pan.baidu.com/s/1SSPQnbDP6zf9xf8eCDi3Fw) (Code: jcgd), you will find a keras hdf5 weights file. Download this file at ./ 
+3. Run Face_detection_and_anonymizing.py
+
+### Project structure
+* Face detection results are in `images/img_results/*`
+* Anonymizing results are in `images/test_results/*`
+
+-------------
 # CSP
 
 A pytorch implementation of CSP, `Wei Liu, etc. High-level Semantic Feature Detection: A New Perspective for Pedestrian Detection, CVPR 2019.` 
