@@ -17,16 +17,19 @@ class IdentityBlock(nn.Module):
         self.bn3 = nn.BatchNorm2d(filters * self.expansion, eps=1e-03, momentum=0.01)
         self.relu = nn.ReLU(inplace=True)
 
-    def forward(self, x):
+    def forward(self, x, debug_log=False):
         out = self.conv1(x)
         out = self.bn1(out)
         out = self.relu(out)
 
-        print('a shape --- ', out.shape)
+        if debug_log:
+            print('a shape --- ', out.shape)
         out = self.samepad(out)
-        print('b shape --- ', out.shape)
+        if debug_log:
+            print('b shape --- ', out.shape)
         out = self.conv2(out)
-        print('c shape --- ', out.shape)
+        if debug_log:
+            print('c shape --- ', out.shape)
         out = self.bn2(out)
         out = self.relu(out)
 
@@ -53,16 +56,19 @@ class ConvBlock(nn.Module):
         self.bn4 = nn.BatchNorm2d(filters * self.expansion, eps=1e-03, momentum=0.01)
         self.relu = nn.ReLU(inplace=True)
 
-    def forward(self, x):
+    def forward(self, x, debug_log=False):
         out = self.conv1(x)
         out = self.bn1(out)
         out = self.relu(out)
 
-        print('a shape --- ', out.shape)
+        if debug_log:
+            print('a shape --- ', out.shape)
         out = self.samepad(out)
-        print('b shape --- ', out.shape)
+        if debug_log:
+            print('b shape --- ', out.shape)
         out = self.conv2(out)
-        print('c shape --- ', out.shape)
+        if debug_log:
+            print('c shape --- ', out.shape)
         out = self.bn2(out)
         out = self.relu(out)
 
@@ -71,7 +77,8 @@ class ConvBlock(nn.Module):
 
         shortcut = self.conv4(x)
         shortcut = self.bn4(shortcut)
-        print('shortcut shape --- ', shortcut.shape)
+        if debug_log:
+            print('shortcut shape --- ', shortcut.shape)
 
         out += shortcut
         out = self.relu(out)
