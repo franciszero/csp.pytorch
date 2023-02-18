@@ -6,7 +6,7 @@
 2. Download trained weights from [Google Drive](https://drive.google.com/file/d/182JeC23uO6DJKDbAlD3f4hP6Lsib4CpX/view?usp=share_link)
 3. Prepare testing images 
 ```
-./data/crowdhuman
+./
 ├── images
 │   └── test_data
 │       └── test img here
