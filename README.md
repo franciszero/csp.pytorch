@@ -1,14 +1,28 @@
-# Usage - anonymizing faces
+# `READ.ME by Francis for face ananymizing`
 
-1. Setup venv requirements.txt
-2. Follow the file path model_CSP/widerface/net_e382_l0.hdf5 at [here](https://pan.baidu.com/s/1SSPQnbDP6zf9xf8eCDi3Fw) (Code: jcgd), you will find a keras hdf5 weights file. Download this file at ./ 
-3. Run Face_detection_and_anonymizing.py
+### Preparation
+
+1. Setup venv requirements.txt: `pip install -r requirements.txt`
+2. Download trained weights from [Google Drive](https://drive.google.com/file/d/182JeC23uO6DJKDbAlD3f4hP6Lsib4CpX/view?usp=share_link)
+3. Prepare testing images 
+```
+./data/crowdhuman
+├── images
+│   └── test_data
+│       └── test img here
+│   └── test_results
+│       └── output here
+│── net_e382_l0.hdf5  # pre-trained weight
+│── face_detection_and_anonymizing.py  # face anonymizing
+```
+4. Modify face_detection_and_anonymizing.py
 
 ### Project structure
 * Face detection results are in `images/img_results/*`
 * Anonymizing results are in `images/test_results/*`
 
 -------------
+# `READ.ME by wang-xinyu`
 # CSP
 
 A pytorch implementation of CSP, `Wei Liu, etc. High-level Semantic Feature Detection: A New Perspective for Pedestrian Detection, CVPR 2019.` 
