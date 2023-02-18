@@ -11,14 +11,12 @@ from utils.utils import format_img, parse_wider_offset
 
 
 class Driver:
-    def __init__(self, i='img_data/', o='img_results/', device='cpu'):
-        self.workspace = './images/'
-        self.input_root = i
-        self.output_root = o
-        self.output_path = self.workspace + self.output_root
-        self.img_paths = glob.glob(self.workspace + self.input_root + '*.*')
+    def __init__(self, device='cpu'):
+        self.input_root = './images/test_data/'
+        self.output_root = './images/test_results/'
+        self.img_paths = glob.glob(self.input_root + '*.*')
         self.model = CSPNet_p3p4p5(num_scale=2)
-        load_keras_weights(self.model, self.workspace + '../net_e382_l0.hdf5')
+        load_keras_weights(self.model, './net_e382_l0.hdf5')
         self.device = device
         self.model.to(self.device).eval()
         self.imgIdx = 0
@@ -60,7 +58,7 @@ class Driver:
 
     def save_img(self, img):
         (input_path, filename) = os.path.split(self.current_image_path)
-        output_file_path = self.output_path + filename
+        output_file_path = self.output_root + filename
         cv2.imwrite(output_file_path, img)
         print('save file to : %s\n' % output_file_path)
         pass
