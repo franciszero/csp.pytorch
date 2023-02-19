@@ -14,5 +14,5 @@
 │── face_detection_and_anonymizing.py
 ```
 4. Modify `run.py` 
-   * Use `'device=cuda:0'` instead of `'device=cpu'` if CUDA is available 
-5. Execute `run.py` then all the images in `./images/test_data` will be processed and the outcomes will be saved into `./images/test_results` with face blurs.
+   * Using `'device=cpu'` instead of `'device=cuda:0'` if CUDA is not available 
+5. Execute `run.py` then all the images in `./images/test_data` will be processed and output to `./images/test_results` with face blurs.
