@@ -1,7 +1,11 @@
 from face_anonymizing import Driver
+import torch
 
 if __name__ == '__main__':
-    foo = Driver(device='cuda:0')  # Use 'cuda:0' instead of 'cpu' if CUDA is available
+    device = 'cpu'
+    if torch.cuda.is_available():
+        device = 'cuda:0'
+    foo = Driver(device=device)  # Use 'cuda:0' instead of 'cpu' if CUDA is available
     s = len(foo.img_paths)
     for i in range(s):
         img = foo.get_next_img()

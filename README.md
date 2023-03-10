@@ -11,8 +11,6 @@
 │   └── test_data
 │   └── test_results
 │── net_e382_l0.hdf5
-│── face_detection_and_anonymizing.py
+│── run.py
 ```
-4. Modify `run.py` 
-   * Using `'device=cpu'` instead of `'device=cuda:0'` if CUDA is not available 
-5. Execute `run.py` then all the images in `./images/test_data` will be processed and output to `./images/test_results` with face blurs.
+4. Execute `run.py` then all the images in `./images/test_data` will be processed and output to `./images/test_results` with face blurs.
